@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="qwerty">
+    <head>
+        <title>MageOS GraphQL Playground</title>
+
+        <!--Remove require-js assets-->
+        <remove src="css/print.css"/>
+        <remove src="css/styles-l.css"/>
+        <remove src="css/styles-m.css"/>
+        <remove src="css/styles-s.css"/>
+        <remove src="requirejs/require.js"/>
+        <remove src="mage/calendar.css"/>
+        <remove src="mage/requirejs/mixins.js"/>
+        <remove src="requirejs-config.js"/>
+
+        <script src="MageOS_GraphQlPlayground::graphiql/js/react.development.js" type="text/javascript" />
+        <script src="MageOS_GraphQlPlayground::graphiql/js/react-dom.development.js" type="text/javascript" />
+        <script src="MageOS_GraphQlPlayground::graphiql/js/graphiql.min.js" type="text/javascript" />
+        <script src="MageOS_GraphQlPlayground::graphiql/js/index.umd.js" type="text/javascript" />
+        <css src="MageOS_GraphQlPlayground::graphiql/css/graphiql.min.css" />
+        <css src="MageOS_GraphQlPlayground::graphiql/css/styles.css" />
+    </head>
+    <body>
+        <!--Remove Magento page content-->
+        <referenceContainer name="page.wrapper" remove="true"/>
+        <referenceBlock name="translate" remove="true"/>
+        <referenceBlock name="theme.active.editor" remove="true" />
+        <referenceBlock name="requirejs-config" remove="true"/>
+
+        <!-- Add graphiql -->
+        <referenceContainer name="root">
+            <block name="mageos.graphqlplayground.graphiqlContent" template="MageOS_GraphQlPlayground::graphiql/index.phtml" />
+        </referenceContainer>
+    </body>
+</page>

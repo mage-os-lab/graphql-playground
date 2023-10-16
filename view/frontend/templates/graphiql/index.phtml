@@ -1,0 +1,36 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+?>
+
+<div id="graphiql">Loading...</div>
+
+<style>
+    body {
+        height: 100%;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #graphiql {
+        height: 100vh;
+    }
+</style>
+
+<script>
+    const root = ReactDOM.createRoot(document.getElementById('graphiql'));
+    const fetcher = GraphiQL.createFetcher({
+        url: '<?= $escaper->escapeUrl($block->getUrl('graphql/index/index')) ?>',
+    });
+    const explorerPlugin = GraphiQLPluginExplorer.explorerPlugin();
+    root.render(
+        React.createElement(GraphiQL, {
+            fetcher,
+            defaultEditorToolsVisibility: true,
+            plugins: [explorerPlugin],
+        }),
+    );
+</script>
