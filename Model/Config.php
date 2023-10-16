@@ -12,6 +12,7 @@ namespace MageOS\GraphQlPlayground\Model;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\State;
 use Magento\Store\Api\Data\StoreInterface;
+use Magento\Store\Model\ScopeInterface;
 
 /**
  * Configuration for Swagger
@@ -40,6 +41,10 @@ class Config
     public function isEnabled(StoreInterface $store): bool
     {
         return $this->state->getMode() === State::MODE_DEVELOPER ||
-            $this->scopeConfig->isSetFlag(self::XML_PATH_ENABLED_IN_PRODUCTION, $store);
+            $this->scopeConfig->isSetFlag(
+                self::XML_PATH_ENABLED_IN_PRODUCTION,
+                ScopeInterface::SCOPE_STORE,
+                $store
+            );
     }
 }
