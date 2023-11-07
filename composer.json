@@ -30,6 +30,9 @@
             "MageOS\\GraphQlPlayground\\": ""
         }
     },
+    "scripts": {
+        "test": "phpunit"
+    },
     "config": {
         "allow-plugins": {
             "magento/composer-dependency-version-audit-plugin": false,
