@@ -8,11 +8,7 @@
     "repositories": [
       {
         "type": "composer",
-        "url": "https://repo.mage-os.org"
-      },
-      {
-	"type": "composer",
-	"url": "https://mirror.mage-os.org"
+        "url": "https://mirror.mage-os.org"
       }
     ],
     "require": {
