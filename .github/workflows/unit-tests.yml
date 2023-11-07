@@ -13,4 +13,16 @@ permissions:
 
 jobs:
   run-unit-tests:
-    uses: mage-os/infrastructure/.github/workflows/unit-tests.yml@main
+    # TODO: Add the right Github Action here
+    #uses: mage-os/infrastructure/.github/workflows/unit-tests.yml@main
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest --no-interaction --no-scripts
+
+    - name: Run unit tests
+      run: vendor/bin/phpunit
