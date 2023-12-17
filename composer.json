@@ -3,7 +3,7 @@
     "description": "Provides a GraphQl Playground based on GraphiQL to work with the GraphQl API of Mage-OS",
     "type": "magento2-module",
     "license": [
-        "GPL-3.0-only"
+        "MIT"
     ],
     "repositories": [
       {
