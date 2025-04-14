@@ -1,6 +1,13 @@
 {
     "name": "mageos/graphql-playground",
     "description": "Provides a GraphQl Playground based on GraphiQL to work with the GraphQl API of Mage-OS",
+    "keywords": [
+        "dev",
+        "magento",
+        "magento2",
+        "graphql",
+        "graphiql"
+    ],
     "type": "magento2-module",
     "license": [
         "MIT"
